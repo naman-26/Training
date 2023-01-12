@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* CSS to layout the buttons in a 3x3 grid */
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+    button {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="grid">
+    <button id="button1">1</button>
+    <button id="button2">2</button>
+    <button id="button3">3</button>
+    <button id="button4">4</button>
+    <button id="button5" onclick="rotate()">5</button>
+    <button id="button6">6</button>
+    <button id="button7">7</button>
+    <button id="button8">8</button>
+    <button id="button9">9</button>
+  </div>
+
+  <script>
+    function rotate() {
+      var button1 = document.getElementById("button1");
+      var button2 = document.getElementById("button2");
+      var button3 = document.getElementById("button3");
+      var button4 = document.getElementById("button4");
+      var button6 = document.getElementById("button6");
+      var button7 = document.getElementById("button7");
+      var button8 = document.getElementById("button8");
+      var button9 = document.getElementById("button9");
+      var temp = button1.innerHTML;
+      button1.innerHTML = button4.innerHTML;
+      button4.innerHTML = button7.innerHTML;
+      button7.innerHTML = button8.innerHTML;
+      button8.innerHTML = button9.innerHTML;
+      button9.innerHTML = button6.innerHTML;
+      button6.innerHTML = button3.innerHTML;
+      button3.innerHTML = button2.innerHTML;
+      button2.innerHTML = temp;
+    }
+  </script>
+</body>
+</html>
